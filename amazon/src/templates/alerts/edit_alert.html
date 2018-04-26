@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+    <br><br><br>
+    <div class="page-header text-center">
+        <h1>Edit Alert</h1>
+    </div>
+    <br>
+    <div class="mx-auto card w-75 p-3" style="background-color:lightgray ">
+        <form  method="post">
+            <div class="form-group">
+                <label for="name"><strong>Alert/Item Name</strong></label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Name"  disabled>
+            </div>
+            <div class="form-group">
+                <label for="url"><strong>URL</strong></label>
+                <input type="text" class="form-control" id="url" name="url" placeholder="http://..."  disabled>
+            </div>
+            <div class="form-group">
+                <label for="price_limit"><strong>Alert Limit</strong></label>
+                <input type="text" class="form-control" id="price_limit" name="price_limit" placeholder="100.0" value="{{ alert.price_limit }}" aria-describedby="priceLimitBlock">
+                <p id="priceLimitBlock" class="help-block">We'll send you an email when the price reaches or is cheaper than this price</p>
+            </div>
+            <button type="submit" class="btn btn-success">Edit</button>
+        </form>
+    </div>
+    <br><br><br><br><br><br>
+{% endblock %}

@@ -1,0 +1,28 @@
+{%  extends "base.html" %}
+{%  block content %}
+<br><br><br><br>
+
+    <div class="mx-auto card w-75 p-3">
+            <div class="card-body">
+               <h4>Alert <small> for {{ alert.name }}</small></h4>
+                 <p>Last price found <strong> {{ alert.price }}</strong></p>
+                 <p>Last checked on <strong></strong></p>
+                <p>We will email you if price falls below <strong> {{ alert.price_limit }}</strong></p>
+                <p>Alert Active: {{ alert.active }}</p>
+                <div class="panel-body">
+            <a class="btn btn-primary" href="{{alert.url}}" role="button">Visit Site</a>
+            {% if alert.active %}
+                <a class="btn btn-danger" href="{{ url_for('alerts.deactivate_alert', alert_id=alert.alert_id)}}" role="button">Deactivate Alert</a>
+                 <a class="btn btn-success" href="{{ url_for('alerts.edit_alert', alert_id=alert.alert_id)}}" role="button">Edit Alert</a>
+            {% else %}
+                <a class="btn btn-success" href="{{ url_for('alerts.activate_alert', alert_id=alert.alert_id)}}" role="button">Activate Alert</a>
+                <a class="btn btn-danger"  href="{{ url_for('alerts.delete_alert', alert_id=alert.alert_id)}}" role="button">Permanently Delete Alert</a>
+            {% endif %}
+            <a class="btn btn-warning" href="{{ url_for('alerts.check_alert_price', alert_id=alert.alert_id)}}" role="button">Check alert price</a>
+        </div>
+            </div>
+        </div>
+
+
+<br><br><br><br><br><br><br><br><br>
+{% endblock %}

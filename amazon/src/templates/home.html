@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+        <div class="container">
+
+          <h1 class="display-3">Price Service</h1>
+          <p>We scan online store websites to alert you of price drops in products that intrest you </p>
+            <p>Just sign up and get started by adding the URL of an item that you wish to track. We'll do the rest!</p>
+
+            {% if session['email'] %}
+                <!--<button class="btn btn-info" href="">Logout</button>-->
+                <div class="btn-group">
+                    <a href="" class="btn btn-primary active">Logout</a>
+                </div>
+            {% else %}
+               <div class="btn-group">
+                    <a href="" class="btn btn-primary active">Signup</a>
+                </div>
+            {% endif %}
+
+
+
+
+
+          <!--<p><a class="btn btn-primary btn-lg" href="" role="button">Sign up &raquo;</a></p>-->
+
+        </div>
+      </div>
+
+{% endblock content %}
