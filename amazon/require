@@ -1,0 +1,7 @@
+Flask==0.10.1
+pymongo==3.0.3
+beautifulsoup4==4.4.1
+passlib==1.6.5
+requests==2.8.0
+fake_useragent
+pip3 install lxml
